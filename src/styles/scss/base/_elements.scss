@@ -1,5 +1,13 @@
+
+//adding styles to base HTML elements, such as <body>, <h1>, etc..
 #root, body, html {
   height: 100%;
   padding: 0;
   margin: 0;
 }
+
+h1 {
+  background-color: $color-main;
+  font-family: $font-main;
+}
+
