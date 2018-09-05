@@ -1,40 +1,32 @@
 import React, { Component } from 'react';
 
+import Recipe from './Recipe';
 
 class App extends Component {
-
   constructor() {
     super();
-    //this.selectNewRecipe = this.selectNewRecipe.bind(this);
     this.state = {
       recipes: [
         {
-          title: 'Bagel',
+          title: 'Bagel',  ingredients: ['1 Bagel', 'Cream cheese' ],
+          steps: ['Slice bagel in half', 'Spread on cream cheese', 'Enjoy!'
+          ],
+          id: 'bagel'
+        },
+        {
+          title: 'Pizza',
           ingredients: [
-          '1 Bagel',
-          'Cream cheese'
+            '1 Pizza Crust',
+            '1 Jar of Pizza Sauce',
+            '3 oz Part-Skim Mozerella Cheese'
           ],
           steps: [
-          'slice nagel in half',
-          'Spread on cream cheese',
-          'Enjoy!'
+            'Put sauce on crust',
+            'Sprinkle mozarella cheese over sauce',
+            'Bake at 350 degrees for 20 minutes'
           ],
-          id: 'bagel'        
-      },
-      {
-        title: 'Pizza',
-        ingredients: [
-          '1 Pizza Crust',
-          '1 Jar of Pizza Sauce',
-          '3 oz Part-Skim Mozerella Cheese'
-        ],
-        steps: [
-          'Put sacue on crust',
-          'Sprinkle a little love on it',
-          'Bake at the moon!'
-        ],
-        id: 'pizza'
-      }
+          id: 'pizza'
+        },
       ]
     };
   }
@@ -42,7 +34,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>React Recipe App</h1>
+        <h1>React Recipe Book</h1>
+        
+        {
+          this.state.recipes.map((recipe, i) => {
+            <Recipe 
+              title={recipe.title} 
+              ingredients={recipe.ingredients}
+              steps={recipe.steps}
+              key={i}
+              id={recipe.id}            
+            />
+            
+          }
+        )
+      }
       </div>
     );
   }

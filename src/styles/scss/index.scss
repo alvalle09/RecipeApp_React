@@ -1,2 +1,4 @@
-@import 'base/variables';
-@import 'base/elements';
+@import 'base/variables'; //partials imported can omit the _character here.
+@import 'base/elements'; // this imports _elements.scss
+
+
