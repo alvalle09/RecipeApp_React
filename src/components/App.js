@@ -5,7 +5,7 @@ class App extends Component {
 
   constructor() {
     super();
-    this.selectNewRecipe = this.selectNewRecipe.bind(this);
+    //this.selectNewRecipe = this.selectNewRecipe.bind(this);
     this.state = {
       recipes: [
         {
