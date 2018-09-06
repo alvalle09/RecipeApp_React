@@ -7,8 +7,8 @@ class Navigation extends Component {
     this.changeRecipe = this.changeRecipe.bind(this);    
   }
 
-  changeRecipe() {
-    const buttonI = e.target.id;
+  changeRecipe(e) {
+    const buttonId = e.target.id;
     const recipeId = buttonId.split('_')[0];
     this.props.recipeToSelect(recipeId);
   }
@@ -22,8 +22,8 @@ class Navigation extends Component {
            this.props.recipes.map((recipe) => 
            <li>
              <button
-              id={recipe.id + '_button'}
-              key={recipe.id} >
+              id={recipe.id + '_button'} /* renders a button with id of id_button */
+              key={recipe.id} > {/* render a button dynamically, weird comment syntax if u ask me*/}
               {recipe.title}
             </button>
            </li>

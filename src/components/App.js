@@ -17,7 +17,8 @@ class App extends Component {
           steps: ['Put sauce on crust', 'Sprinkle mozarella cheese over sauce', 'Bake at 350 degrees for 20 minutes' ],
           id: 'pizza'
         },
-      ]
+      ],
+      selectedRecipe: null,
     }
   }
   
