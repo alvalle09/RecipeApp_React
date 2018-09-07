@@ -21,6 +21,12 @@ class App extends Component {
           steps: ['Put sauce on crust', 'Sprinkle mozarella cheese over sauce', 'Bake at 350 degrees for 20 minutes' ],
           id: 'pizza'
         },
+        {
+          title: 'Chalupas', 
+          ingredients: ['Tortillas', 'Lettuce', 'Tomatoe', 'Cheese'],
+          steps: ['Fry Tortilla', 'Cut tomatoe and lettuce', 'Spread beans on tortillas, top with lettuce & Tomatoe' ],
+          id: 'chalupas'
+        },
       ],
       selectedRecipe: null
     }
