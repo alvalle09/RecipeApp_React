@@ -13,7 +13,6 @@ class Navigation extends Component {
     this.props.recipeToSelect(recipeId);
   }
 
-
   render() {
     return (
      <nav>
@@ -23,8 +22,10 @@ class Navigation extends Component {
            <li>
              <button
               id={recipe.id + '_button'} /* renders a button with id of id_button */
-              key={recipe.id} > {/* render a button dynamically, weird comment syntax if u ask me*/}
-              {recipe.title}
+              key={recipe.id}  /* render a button dynamically, weird comment syntax if u ask me*/
+              onClick={this.changeRecipe}
+            >
+            {recipe.title}
             </button>
            </li>
            )
@@ -36,7 +37,8 @@ class Navigation extends Component {
 }
 
 Navigation.propTypes = {
-  recipes: PropTypes.array.isRequired
+  recipes: PropTypes.array.isRequired,
+  recipeToSelect: PropTypes.func.isRequired
 };
 
 export default Navigation;
