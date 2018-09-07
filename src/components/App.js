@@ -18,19 +18,25 @@ class App extends Component {
           id: 'pizza'
         },
       ],
-      selectedRecipe: null,
+      selectedRecipe: null
     }
   }
   
   render() {
+    let recipeToSelect;
+    if (this.state.selectedRecipe) {
+      const filteredRecipes = this.state.recipes.filter((recipe) => recipe.id === this.state.selectedRecipe);
+      if (filteredRecipes.length > 0) {
+        recipeToSelect = filteredRecipes[0];
+      }
+    }
+
     return (
       <div className="App">
         <Navigation recipes={this.state.recipes} />
-
         <h1>React Recipe Book</h1>    
            
-        { 
-        
+        {         
           this.state.recipes.map((recipe, i) => {
             <Recipe 
             title={recipe.title}
@@ -39,9 +45,21 @@ class App extends Component {
             key={i}
             id={recipe.id}
           />          
-          }
+          }          
         )
+      }
+
+      {
+        recipeToSelect ? 
+          <Recipe
+          ingredients={recipeToSelect.ingredients}
+          steps={recipeToSelect.steps}
+          title={recipeToSelect.title}
+          />
+          :
+          null
       }        
+      
     </div>
     );
   }
