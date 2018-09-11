@@ -24,6 +24,12 @@ class Navigation extends Component {
               id={recipe.id + '_button'} /* renders a button with id of id_button */
               key={recipe.id}  /* render a button dynamically, weird comment syntax if u ask me*/
               onClick={this.changeRecipe}
+              className={
+                recipe.id === this.props.activeRecipe ?
+                  'Navigation__button Navigation_button--active'
+                  :
+                  'Navigation__button'
+              }
             >
             {recipe.title}
             </button>
