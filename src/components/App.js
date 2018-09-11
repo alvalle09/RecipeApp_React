@@ -54,15 +54,16 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Navigation 
-          recipes={this.state.recipes} 
-          activeRecipe= {this.state.selectedRecipe}
-          recipeToSelect={this.selectNewRecipe}
-        />
-        <h1>React Recipe Book</h1>    
-                   
-
-      {
+        <aside className='sidebar'>
+          <h1 className='sidebar__title'>React Recipe Book</h1>
+          <Navigation 
+            recipes={this.state.recipes} 
+            activeRecipe= {this.state.selectedRecipe}
+            recipeToSelect={this.selectNewRecipe}
+          />
+        </aside>
+           
+     {
         recipeToSelect ? 
           <Recipe
           ingredients={recipeToSelect.ingredients}
